@@ -1,0 +1,34 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const dotenv = require("dotenv");
+const morgan = require("morgan");
+const connectDB = require("./config/connectDB");
+
+// dotenv config
+dotenv.config();
+
+// connect database
+connectDB();
+
+// middlewares
+app.use(morgan("dev"));
+app.use(express.json());
+
+// Routes
+// user routes
+app.use("/api/v1/users", require("./routes/userRoutes"));
+// blog routes
+app.use("/api/v1/blogs", require("./routes/blogRoutes"));
+
+// app.get("/", (req, res) => {
+//   res.send("hello from server");
+// });
+
+// PORT
+const PORT = process.env.PORT || 8080;
+
+// Listen
+app.listen(PORT, () => {
+  console.log(`Server is running`);
+});
