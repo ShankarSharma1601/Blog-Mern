@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const cors = require("cors");
 const connectDB = require("./config/connectDB");
 
 // dotenv config
@@ -12,6 +13,8 @@ dotenv.config();
 connectDB();
 
 // middlewares
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 

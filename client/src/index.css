@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.forms{
+    width: 40%;
+    height: 70vh;
+    margin: auto;
+    margin-top: 70px;
+    border: 1px solid black;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, rgb(0, 179, 255), yellow);
+}
