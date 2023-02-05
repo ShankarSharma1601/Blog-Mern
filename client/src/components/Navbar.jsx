@@ -26,6 +26,11 @@ const Navbar = () => {
                 All Blogs
               </Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/add-blog">
+                Add Blog
+              </Link>
+            </li>
           </ul>
           <Link to="/login" className="btn btn-info mx-auto">
             Login
